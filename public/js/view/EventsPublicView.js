@@ -1,8 +1,5 @@
-
-class ParticipatesAdminView {
-    constructor() {
-        
-    }
+class EventsPublicView {
+    constructor() {}
 }
 
-export default ParticipatesAdminView;
+export default EventsPublicView;

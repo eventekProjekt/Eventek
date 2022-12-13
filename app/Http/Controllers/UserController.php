@@ -11,13 +11,13 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users=response()->json(User::all());
+        $users = response()->json(User::all());
         return $users;
     }
 
     public function show($id)
     {
-        $user=response()->json(User::find($id));
+        $user = response()->json(User::find($id));
         return $user;
     }
 
@@ -29,36 +29,36 @@ class UserController extends Controller
 
     public function update(Request $request, $id)
     {
-        $user=User::find($id);
-        $user->name=$request->name;
-        $user->email=$request->email;
-        $user->VIP=$request->VIP;
-        $user->password=$this->updatePassword($request, $user->id);;
+        $user = User::find($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->VIP = $request->VIP;
+        $user->password = Hash::make($request->password);
         $user->save();
         return redirect('/user/list');
     }
 
     public function store(Request $request)
     {
-        $user=new User();
-        $user->name=$request->name;
-        $user->email=$request->email;
-        $user->VIP=$request->VIP;
-        $user->password=$request->password;
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->VIP = $request->VIP;
+        $user->password = Hash::make($request->password);
         $user->save();
         return redirect('/user/list');
     }
 
     public function newView()
     {
-        $user=User::all();
-        return view('user.new', ['user'=>$user]);
+        $user = User::all();
+        return view('user.new', ['user' => $user]);
     }
 
     public function editView($id)
     {
-        $user=User::find($id);
-        return view('user.edit', ['user'=>$user]);
+        $user = User::find($id);
+        return view('user.edit', ['user' => $user]);
     }
 
     public function listView()
@@ -80,5 +80,4 @@ class UserController extends Controller
         ]);
         return response()->json(["user" => $user]);
     }
-
 }

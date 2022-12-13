@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AgencyController;
 use App\Http\Controllers\EventsController;
 use App\Http\Controllers\ParticipatesController;
 use App\Http\Controllers\ProfileController;

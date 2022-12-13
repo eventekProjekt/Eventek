@@ -1,24 +1,29 @@
+import AgencyAdminController from './controller/AgencyAdminController.js';
 import EventsAdminController from './controller/EventsAdminController.js';
 import EventsPublicController from './controller/EventsPublicController.js';
 import ParticipatesAdminControler from './controller/ParticipatesAdminControler.js';
 
+const SZULO=document.querySelector("article");
+
 document.querySelector(".eventAdmin").addEventListener("click", ()=>{
-    const szuloelem=document.querySelector("article");
-    szuloelem.innerHTML=""
+    SZULO.innerHTML=""
     const admE = new EventsAdminController();
     
 })
 document.querySelector(".participants").addEventListener("click", ()=>{
-    const szuloelem=document.querySelector("article");
-    szuloelem.innerHTML=""
+    SZULO.innerHTML=""
     //const admP = new ParticipatesAdminControler();
-    szuloelem.innerText="participants admin oldal"
+    SZULO.innerText="participants admin oldal"
     
 })
 document.querySelector(".event").addEventListener("click", ()=>{
-    const szuloelem=document.querySelector("article");
-    szuloelem.innerHTML=""
+    SZULO.innerHTML=""
     //const usrE = new EventsPublicController();
-    szuloelem.innerText="events public oldal"
+    SZULO.innerText="events public oldal"
     
+})
+
+document.querySelector(".agencyAdmin").addEventListener("click", ()=>{
+    SZULO.innerHTML=""
+    const agn = new AgencyAdminController()
 })

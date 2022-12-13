@@ -8,8 +8,7 @@ import ParticipatesAdminControler from './controller/ParticipatesAdminControler.
 document.querySelector(".eventAdmin").addEventListener("click", ()=>{
     const szuloelem=document.querySelector("article");
     szuloelem.innerHTML=""
-    //const admE = new EventsAdminController();
-    szuloelem.innerText="event admin oldal"
+    const admE = new EventsAdminController();
     
 })
 document.querySelector(".participants").addEventListener("click", ()=>{

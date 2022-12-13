@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Participates;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -20,7 +21,13 @@ return new class extends Migration
             $table->boolean("present");
             $table->timestamps();
         });
+        Participates::create([1, 1, 1]);
+        Participates::create([1, 2, 0]);
+        Participates::create([2, 2, 0]);
+        Participates::create([3, 4, 1]);
     }
+
+    
 
     /**
      * Reverse the migrations.

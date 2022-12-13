@@ -35,6 +35,9 @@
                             <li class="nav-item">
                                 <a class="event nav-link" href="#">Event</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="agencyAdmin nav-link" href="#">Agency admin</a>
+                            </li>
                         </ul>
                     </div>
                 </div>

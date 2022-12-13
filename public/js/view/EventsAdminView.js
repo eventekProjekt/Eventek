@@ -15,7 +15,7 @@ class EventAdminView {
           <th scope="col">státusz</th>
           <th scope="col">Művelet</th>
         </tr>
-        </thead>> <tbody class="text-break">`;
+        </thead> <tbody>`;
 
         data.forEach((adat) => {
             const dlticon = new DeleteButton(

@@ -21,13 +21,14 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->boolean('VIP');
             $table->string('password');
+            $table->tinyInteger('level')->default(0); //0 - alap felhaszn., 1 - agency felhaszn., 2 - admin felhaszn.
             $table->rememberToken();
             $table->timestamps();
         });
 
-        User::create(['name' => 'user1', 'email' => 'user1@gmail.com', 'VIP' => 0, 'password' => Hash::make('Aa123456')]);
-        User::create(['name' => 'user2', 'email' => 'user2@gmail.com', 'VIP' => 1, 'password' => Hash::make('Aa123456')]);
-        User::create(['name' => 'user3', 'email' => 'user3@gmail.com', 'VIP' => 0, 'password' => Hash::make('Aa123456')]);
+        User::create(['name' => 'user1', 'email' => 'user1@gmail.com', 'VIP' => 0, 'password' => Hash::make('Aa123456'), 'level'=>1]);
+        User::create(['name' => 'user2', 'email' => 'user2@gmail.com', 'VIP' => 1, 'password' => Hash::make('Aa123456'), 'level'=>2]);
+        User::create(['name' => 'user3', 'email' => 'user3@gmail.com', 'VIP' => 0, 'password' => Hash::make('Aa123456'), 'level'=>2]);
         User::create(['name' => 'user4', 'email' => 'user4@gmail.com', 'VIP' => 1, 'password' => Hash::make('Aa123456')]);
     }
 

@@ -20,6 +20,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::middleware( ['agency'])->group(function () {
+    Route::apiResource('/users', UserController::class);
+});
+
+
 /*---------------------- User routes -----------------------------*/
 Route::get('/api/users', [UserController::class, 'index']);
 Route::get('/api/users/{id}', [UserController::class, 'show']);

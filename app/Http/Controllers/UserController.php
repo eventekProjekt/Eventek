@@ -44,7 +44,7 @@ class UserController extends Controller
         $user->name=$request->name;
         $user->email=$request->email;
         $user->VIP=$request->VIP;
-        $user->password=$request->password;
+        $user->password=Hash::make($request->password);
         $user->save();
         return redirect('/user/list');
     }

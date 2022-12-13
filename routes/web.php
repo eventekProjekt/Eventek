@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\EventsController;
+use App\Http\Controllers\ParticipatesController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*

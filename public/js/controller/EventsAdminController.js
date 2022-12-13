@@ -2,9 +2,11 @@ import FetchModel from '../model/FetchModel.js';
 import '../view/EventsAdminView.js';
 
 class EventsAdminController {
+    #fetchModel
+
     constructor() {
-        const token = $('meta[name="csrf-token"]').attr("content");
-        fetchModel = new FetchModel(token);
+        const token = document.querySelector('meta[name="csrf-token"]').getAttribute("content");
+        this.#fetchModel = new FetchModel(token);
     }
 }
 

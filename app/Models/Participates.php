@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Participates extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = [
         'event_id',
         'user_id',
@@ -20,8 +20,6 @@ class Participates extends Model
         $query
             ->where('event_id', '=', $this->getAttribute('event_id'))
             ->where('user_id', '=', $this->getAttribute('user_id'));
- 
         return $query;
     }
-
 }

@@ -21,13 +21,13 @@ return new class extends Migration
             $table->boolean("present");
             $table->timestamps();
         });
-        Participates::create([1, 1, 1]);
-        Participates::create([1, 2, 0]);
-        Participates::create([2, 2, 0]);
-        Participates::create([3, 4, 1]);
+        Participates::create(['event_id' => 1, 'user_id' => 1, 'present' => 1]);
+        Participates::create(['event_id' => 1, 'user_id' => 2, 'present' => 0]);
+        Participates::create(['event_id' => 2, 'user_id' => 2, 'present' => 0]);
+        Participates::create(['event_id' => 3, 'user_id' => 4, 'present' => 1]);
     }
 
-    
+
 
     /**
      * Reverse the migrations.

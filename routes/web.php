@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+/*---------------------- User routes -----------------------------*/
+Route::get('/api/users', [UserController::class, 'index']);
+Route::get('/api/users/{id}', [UserController::class, 'show']);
+Route::post('/api/users/', [UserController::class, 'store']);
+Route::put('/api/user/{id}', [UserController::class, 'update']);
+Route::delete('/api/users/{id}', [UserController::class, 'destroy']);
+Route::get('/user/new', [UserController::class, 'newView']);
+Route::get('/user/edit/{id}', [UserController::class, 'editView']);
+Route::get('/user/list', [UserController::class, 'listView']);
+/*--------------------------------------------------------------*/

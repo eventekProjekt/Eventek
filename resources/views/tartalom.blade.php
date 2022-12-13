@@ -7,7 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <meta name="csrf-token" content=<?php $token = csrf_token(); echo $token; ?>>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <meta name="csrf-token" content=<?php $token = csrf_token();
+                                    echo $token; ?>>
     <script src="js/main.js" type='module'></script>
     <title>Events DLD DA RÁ</title>
 </head>
@@ -31,6 +34,9 @@
                             </li>
                             <li class="nav-item">
                                 <a class="event nav-link" href="#">Event</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="agencyAdmin nav-link" href="#">Agency admin</a>
                             </li>
                         </ul>
                     </div>

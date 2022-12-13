@@ -47,6 +47,7 @@ Route::middleware(['agency'])->group(function () {
 
 Route::middleware(['auth.basic'])->group(function () {
     Route::get('/api/events', [EventsController::class, 'index']);
+    Route::get('/api/events_with_names', [EventsController::class, 'eventsWithNames']);
     Route::get('/event/list', [EventsController::class, 'listView']);
 });
 

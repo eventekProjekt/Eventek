@@ -9,6 +9,7 @@ class EventsPublicView {
           <th scope="col">date</th>
           <th scope="col">location</th>
           <th scope="col">státusz</th>
+          <th scope="col">jelentkezés</th>
         </tr>
         </thead> <tbody>`;
 
@@ -21,6 +22,7 @@ class EventsPublicView {
                     <td scope="col">${adat.date}</td>
                     <td scope="col">${adat.location}</td>
                     <td scope="col">${(adat.status == 0 ? "aktív" : "eltörölt")}</td>
+                    <td scope="col"><button class="signUpButton">Jelentkezés</td>
                 </tr>`;
             }
         });

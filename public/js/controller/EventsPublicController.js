@@ -14,6 +14,10 @@ class EventsPublicController {
         let szuloelem=document.querySelector("article");
         new EventsPublicView(szuloelem, tomb);
     }
+
+    participate(event_id) {
+        this.#fetchModel.getData(`http://localhost:8000/api/participate_event/${event_id}`, this.Mycallback);
+    }
 }
 
 export default EventsPublicController;

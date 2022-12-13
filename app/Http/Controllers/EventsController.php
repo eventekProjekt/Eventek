@@ -66,7 +66,7 @@ class EventsController extends Controller
 
     public function eventsWithNames()
     {
-        $events = DB::select("select e.name, a.name as agency, e.limit, e.date, e.location, e.status 
+        $events = DB::select("select e.event_id, e.name, a.name as agency, e.limit, e.date, e.location, e.status
         from events as e
         join agencies as a on e.agency_id = a.agency_id");
         return $events;

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AgencyController;
 use App\Http\Controllers\EventsController;
 use App\Http\Controllers\ParticipatesController;
 use App\Http\Controllers\ProfileController;
@@ -48,6 +49,7 @@ Route::middleware(['auth.basic'])->group(function () {
     Route::get('/api/events', [EventsController::class, 'index']);
     Route::get('/api/events_with_names', [EventsController::class, 'eventsWithNames']);
     Route::get('/event/list', [EventsController::class, 'listView']);
+    Route::put('/api/participate_event/{event_id}', [ParticipatesController::class, 'participateEvent']);
 });
 
 
@@ -74,13 +76,14 @@ Route::middleware(['admin'])->group(function () {
 
     //participate end points
     Route::get('/api/participates', [ParticipatesController::class, 'index']);
-    Route::get('/api/participates/{id}', [ParticipatesController::class, 'show']);
+    Route::get('/api/participates/{event_id}/{user_id}', [ParticipatesController::class, 'show']);
     Route::post('/api/participates/', [ParticipatesController::class, 'store']);
-    Route::put('/api/participate/{id}', [ParticipatesController::class, 'update']);
-    Route::delete('/api/participates/{id}', [ParticipatesController::class, 'destroy']);
+    Route::put('/api/participate/{event_id}/{user_id}', [ParticipatesController::class, 'update']);
+    Route::delete('/api/participates/{event_id}/{user_id}', [ParticipatesController::class, 'destroy']);
     Route::get('/participate/new', [ParticipatesController::class, 'newView']);
-    Route::get('/participate/edit/{id}', [ParticipatesController::class, 'editView']);
+    Route::get('/participate/edit/{event_id}/{user_id}', [ParticipatesController::class, 'editView']);
     Route::get('/participate/list', [ParticipatesController::class, 'listView']);
+    //agencies end points
     Route::get('/api/agencies', [AgencyController::class, 'index']);
     Route::get('/api/agencies/{id}', [AgencyController::class, 'show']);
     Route::post('/api/agencies/', [AgencyController::class, 'store']);

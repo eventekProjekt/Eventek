@@ -11,7 +11,7 @@ class EventAdminView {
           <th scope="col">location</th>
           <th scope="col">státusz</th>
         </tr>
-        </thead>> <tbody>`;
+        </thead> <tbody>`;
 
         data.forEach((adat) => {
             txt += `<tr>

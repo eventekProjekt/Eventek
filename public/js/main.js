@@ -18,7 +18,6 @@ document.querySelector(".participants").addEventListener("click", ()=>{
 document.querySelector(".event").addEventListener("click", ()=>{
     const szuloelem=document.querySelector("article");
     szuloelem.innerHTML=""
-    //const usrE = new EventsPublicController();
-    szuloelem.innerText="events public oldal"
+    const usrE = new EventsPublicController();
     
 })

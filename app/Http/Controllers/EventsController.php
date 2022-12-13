@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class EventsController extends Controller
 {
@@ -61,5 +62,13 @@ class EventsController extends Controller
     {
         $events = Event::all();
         return view('event.list', ['events' => $events]);
+    }
+
+    public function eventsWithNames()
+    {
+        $events = DB::select("select e.name, a.name as agency, e.limit, e.date, e.location, e.status 
+        from events as e
+        join agencies as a on e.agency_id = a.agency_id");
+        return $events;
     }
 }

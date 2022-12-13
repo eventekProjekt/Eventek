@@ -1,6 +1,6 @@
 class EventAdminView {
     constructor(szuloElem, data) {
-        txt = `<table class="table table-striped">
+        let txt = `<table class="table table-striped">
         <thead>
         <tr>
           <th scope="col">event_id</th>

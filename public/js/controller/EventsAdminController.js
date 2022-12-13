@@ -12,7 +12,7 @@ class EventsAdminController {
     }
 
     Mycallback(tomb){
-        let szuloelem=doucment.querySelector("article");
+        let szuloelem=document.querySelector("article");
         new EventAdminView(szuloelem, tomb);
     }
 }
